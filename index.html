@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="square">
+        <div class="txt">
+            <h1 style="color: coral;">Do You Want to Play a Game ?</h1>
+    
+        </div>
+                <section class="font">
+                    <a href="index1.html"><button type="menu">YES</button></a>
+                    <button onclick="playMusic()" class="music">NO</button>
+                </section>
+                    
+        <audio id="myAudio" loop>
+            <source src="myAudio.mp3" type="audio/mpeg">
+    
+        </audio>
+    
+    </div>
+    
+
+
+
+
+
+    <style>
+        /* body{
+            background-image: url('img1.jpg'); 
+            background-size: cover;       
+            background-position: center;  
+            background-repeat: no-repeat;
+        } */
+         .txt{
+            margin: 0px;
+            padding: 0px;
+
+         }
+        .square{
+            border-radius: 4%;
+            border-style: solid;
+            background-color: rgb(14, 51, 219);
+            margin-top: 80px;
+        }
+        html,
+        body {
+            align-self: center;
+            justify-self: center;
+            color: rgb(166, 255, 0);  
+            background-color: rgb(214, 131, 211);  
+
+        }
+        .font{
+            
+            font-size: 50px;
+            background-color: rgb(158, 230, 204);
+            border-radius: 6px;
+            border-style: solid;
+        }
+        h1 {
+            align-self: center;
+            justify-self: center;
+            /* font-size: larger; */
+            font-weight: 600;
+            /* padding-bottom: 50px;    */
+            border: 10px;
+            border-color:#e246ae;
+            border-style: solid;
+            border-radius: 20px;
+            padding: 8px;
+        }
+
+        a {
+            align-self: center;
+            justify-self: center;
+        }
+
+        button {
+            align-self: center;
+            justify-self: center;
+            margin-left: 80px; 
+            font-weight: 600;
+            margin-top: 20px;
+            padding-right: 20px;
+            background-color: rgb(0, 255, 255);
+
+            /* font-size: larger; */
+            font-style: italic;
+            /* font-size: 30px; */
+            border-radius: 10px;
+            /* padding: 9px; */
+            padding: 10ch;
+            
+        }
+        .music{
+            margin: 100px;
+            /* margin-left: 100px; */
+            margin-left: 80px;
+            /* margin: auto; */
+            /* padding: 10ch; */
+        }
+
+    </style>
+    <script>
+        function playMusic() {
+            const audio = document.getElementById("myAudio");
+            audio.play();
+        }
+    </script>
+</body>
+
+</html>
