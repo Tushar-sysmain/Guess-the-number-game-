@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>Guess the Number Between 1 to 100 </h1>
+    <input type="number" from="1" end="100">
+    <script src="script.js"></script> -->
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title class="typewriter">Guess the Number Game </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #000000fb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      background-image: url('img1.jpg'); 
+      background-size: cover;       
+      background-position: center;  
+      background-repeat: no-repeat; 
+
+      margin-left: auto;
+    }
+    .game-container {
+      background: rgb(63, 62, 62);
+      padding: 4rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 400px;
+      background-image: url('img1.jpg'); 
+      background-size: cover;       
+      /* background-position: center;   */
+      background-repeat: no-repeat;
+    }
+    input[type="number"] {
+      padding: 0.5rem;
+      width: 80%;
+      margin-bottom: 1rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .message {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .typewriter {
+      font-size: 24px;
+      white-space: nowrap;
+      /* border-right: 2px solid rgb(0, 0, 0); */
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink 0.7s step-end infinite;
+      color: rgb(62, 255, 255);
+      border-style:solid;
+      border-color: rgb(240, 181, 113);
+      border-radius: 8px;
+      padding: 18px;    
+      background-color: black;
+      /* word-spacing: 1ch; */
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 29ch }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    .neon{
+        box-shadow: #0f0;
+        color:rgb(255, 6, 6);
+        border-radius: 8px;
+        box-shadow: #007bff;
+        border-style: solid;
+        padding:20px;
+        margin-left: 3px;
+        font-weight: 900;
+        /* font-size: larger; */
+        border-right-width:8px ;
+        border-left-width:8px ;
+        border-top-width:8px ;
+        border-bottom-width:8px ;
+        background-color: black;
+        /* text-box-edge: green; */
+        
+    }
+    .neon:hover {
+        color:#0f0;
+        /* box-shadow: #0f0; */
+        border-radius: 8px;
+        border-style: solid;
+    }
+   
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <span>
+      <h2 id="typewriter" class="neon">Guess The Number  </h2>
+    </span>
+    <section>
+        <p class="typewriter">Guess a number between 1 and 100</p>
+    </section>
+    <input type="number" id="guessInput" min="1" max="10">
+    <br>
+    <button onclick="checkGuess()">Guess</button>
+    <p class="message" id="message" ></p>
+  </div>
+
+  <script>
+    const targetNumber = Math.floor(Math.random() * 10) + 1;
+    let attempts = 0;
+
+    function checkGuess() {
+      const userGuess = Number(document.getElementById('guessInput').value);
+      const message = document.getElementById('message');
+      attempts++;
+
+      if (userGuess === targetNumber) {
+        message.textContent = `🎉🎊 Correct! You guessed it in ${attempts} attempts.🥳`;
+        message.textContent = ` Yay Your score is \n ${attempts*(10/2)} 🥳`;
+        // message.textContent = `Out of 10`;
+        message.style.color = "peach";
+      } else if (userGuess > targetNumber) {
+        message.textContent = "Too high! Try again.";
+        message.style.color = "red";
+      } else {
+        message.textContent = "Too low! Try again.";
+        message.style.color = "red";
+      }
+    }
+    
+  </script>
+</body>
+</html>
+</body>
+</html>
