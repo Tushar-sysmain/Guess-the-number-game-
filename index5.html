@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title class="typewriter">Guess the Number Game </title>
+</head>
+
+<body class="body">
+
+  <style>
+    .body {
+      align-self: center;
+      justify-self: center;
+      /* margin: 0; */
+      padding: 0;
+      background-image: url('image3.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      font-family: sans-serif;
+      color: white;
+      margin-bottom: auto;
+    }
+
+    .game-container {
+      background: rgb(63, 62, 62);
+      padding: 4rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 400px;
+      padding-top: 80px;
+      background-image: url('image3.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      /* margin-bottom: auto; */
+    }
+
+    .guess {
+      color: yellow;
+    }
+
+    input[type="number"] {
+      padding: 0.5rem;
+      width: 80%;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      border: solid;
+      background-color: #007bff;
+      color: white;
+      font-size: 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1DD3B0;
+    }
+
+    .message {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .typewriter {
+      /* font-size: 24px; */
+      white-space: nowrap;
+      border-right: 2px solid rgb(0, 0, 0);
+      overflow: hidden;
+      width: 0;
+      font-weight: 600;
+      font-size: 22px;
+      animation: typing 7s steps(40, end) forwards, blink 0.7s step-end;
+      color: #086375;
+      border-style: solid;
+      border-color: #1DD3B0;
+      border-radius: 9px;
+      border-width: 8px;
+      padding: 18px;
+      background-color: #B2FF9E;
+      word-spacing: 0ch;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 28ch
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    .neon {
+      box-shadow: #0f0;
+      color: #AFFC41;
+      border-radius: 8px;
+      box-shadow: #007bff;
+      border-style: solid;
+      padding: 20px;
+      margin-left: 3px;
+      font-weight: 900;
+      font-size: 30px;
+      border-right-width: 8px;
+      border-left-width: 8px;
+      border-top-width: 8px;
+      border-bottom-width: 8px;
+      background-color: black;
+      text-box-edge: green;
+
+    }
+
+    .neon:hover {
+      color: #ff8ad2;
+      box-shadow: #0f0;
+      border-radius: 8px;
+      border-style: solid;
+    }
+  </style>
+
+
+  <div class="game-container">
+    <span>
+      <h2 id="typewriter" class="neon">Guess The Number </h2>
+    </span>
+    <section>
+      <p class="typewriter">Guess a number between 1 To 100</p>
+    </section>
+    <input type="number" id="guessInput" min="1" max="100">
+    <br>
+    <button onclick="checkGuess()">Guess</button>
+    <p class="message" id="message"></p>
+    <br><br>
+    <button link="https://www.instagram.com/7087tushar/" style="align-self: center;justify-self: center;">
+      <marquee style="align-items: center;justify-self: center;">@Developer Tushar</marquee>
+    </button>
+    <audio id="background-music" autoplay>
+      <source src="mario.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script>
+    const targetNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 3;
+
+    function checkGuess() {
+      const userGuess = Number(document.getElementById('guessInput').value);
+      const message = document.getElementById('message');
+
+      if (attempts <= 0) {
+        message.textContent = "❌ No attempts left! Refresh to try again.";
+        // message.style.color = "gray";
+        message.style.color = "#086375";
+        message.style.fontSize = "24px";
+        message.style.borderStyle = "Double";
+        message.style.background = "#B2FF9E";
+        message.style.borderColor = "#086375";
+        return;
+      }
+
+      if (userGuess === targetNumber) {
+        message.textContent = `🎉 Correct! You guessed it! Score: ${(attempts) * 5}`;
+        // message.style.color = "green";
+        message.style.color = "#086375";
+        message.style.fontSize = "24px";
+        message.style.borderStyle = "Double";
+        message.style.background = "#B2FF9E";
+        message.style.borderColor = "#086375";
+      } else {
+        attempts--;
+        if (attempts > 0) {
+          message.textContent = userGuess > targetNumber ?
+            `📈 Too high! Attempts left: ${attempts}` :
+            `📉 Too low! Attempts left: ${attempts}`;
+          // message.style.color = "red";
+          message.style.color = "#086375";
+          message.style.fontSize = "24px";
+          message.style.borderStyle = "Double";
+          message.style.background = "#B2FF9E";
+          message.style.borderColor = "#086375";
+        } else {
+          message.textContent = `❌ Game Over! The number was ${targetNumber}.`;
+          // message.style.color = "black";
+          message.style.color = "#086375";
+          message.style.fontSize = "24px";
+          message.style.borderStyle = "Double";
+          message.style.background = "#B2FF9E";
+          message.style.borderColor = "#086375";
+        }
+      }
+    }
+
+    window.addEventListener("load", function () {
+      const audio = document.getElementById("background-music");
+      const playPromise = audio.play();
+      
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            console.log("Audio is playing");
+          })
+          .catch(error => {
+            console.warn("Autoplay blocked. User interaction is needed.");
+          });
+      }
+    });
+
+  </script>
+
+
+</body>
+
+</html>
+</body>
+
+</html>

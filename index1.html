@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body style="background-color: #3C1642;">
+
+            <h1 style="padding: 45px 30px;" class="neon-button" >Guess The Number </h1>
+            <br><br><br><br>
+            <a href="index2.html" ><button class="music neon-button" type="menu" style="padding: 40px 95px;" >Start</button></a>
+            <br><br><br><br><br><br>
+            <a> <button onclick="playMusic()" class="music neon-button" style="padding: 38px 102px;">  Exit </button></a>
+            <br>
+        <!-- </section> -->
+
+        <audio id="myAudio" loop>
+            <source src="myAudio.mp3" type="audio/mpeg">
+
+        </audio>
+
+    <!-- </div> -->
+
+    <video class="video-bg" autoplay muted loop playsinline>
+        <source src="video1.mp4/" type="video/mp4">
+        <!-- Your browser does not support the video tag. -->
+    </video>
+
+    <style>
+        /* body{
+            background-image: url('img1.jpg'); 
+            background-size: cover;       
+            background-position: center;  
+            background-repeat: no-repeat;
+        } */
+
+        .video-bg {
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            max-width: 100%; 
+            max-height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            align-items: center;
+            justify-self: center;
+            z-index: -1;
+            margin: 0;
+            object-fit: cover;
+            padding: 0px;
+
+        }
+
+        .txt {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        .square {
+            border-radius: 4%;
+            /* border-style: solid; */
+            /* background-color: rgb(14, 51, 219); */
+            margin-top: 80px;
+        }
+
+        html,
+        body {
+            align-self: center;
+            justify-self: center;
+            /* color: rgb(166, 255, 0); */
+            /* background-color: rgb(214, 131, 211); */
+
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            top: 40%;
+            font-size: 2em;
+            font-family: Arial, sans-serif;
+        }
+
+        .font {
+
+            font-size: 90px;
+            /* background-color: rgb(158, 230, 204); */
+            /* border-radius: 6px */
+            /* border-style: solid; */
+        }
+
+        h1 {
+            align-self: center;
+            justify-self: center;
+            /* font-size: larger; */
+            font-weight: 600;
+            /* padding-bottom: 50px;    */
+            border: 10px;
+            border-color: #f36ac5;
+            border-style: solid;
+            border-radius: 20px;
+            padding: 8px;
+        }
+
+        a {
+            align-self: center;
+            justify-self: center;
+        }
+/* 
+        button {
+            align-self: center;
+            justify-self: center;
+            margin-left: 70px;
+            font-weight: 600;
+            margin-top: 20px;
+            padding-right: 20px;
+            color: aqua;
+            background-color:transparent;
+
+            font-size: larger;
+            font-style: italic;
+            font-size: 30px;
+            border-radius: 10px;
+            padding: 9px;
+            padding: 10ch;
+
+        } */
+
+        .neon-button {
+            font-size: 18px;
+            color: #AFFC41;
+            background: none;
+            border: 2px solid #0ff;
+            border-radius: 8px;
+            cursor: pointer;
+            align-self: center;
+            justify-self: center;
+            justify-items: center;
+            text-transform: uppercase;
+            transition: 0.3s;
+            box-shadow:
+                0 0 5px rgb(247, 113, 229),
+                0 0 10px rgb(247, 113, 229),
+                0 0 20px rgb(247, 113, 229),
+                0 0 40px rgb(247, 113, 229);
+        }
+
+        .neon-button:hover {
+            background-color: #B2FF9E;
+            color: rgb(136, 87, 129);
+            box-shadow:
+                0 0 30px rgb(253, 133, 237),
+                0 0 30px rgb(247, 113, 229),
+                0 0 30px rgb(247, 113, 229),
+                0 0 30px rgb(247, 113, 229);
+        }
+
+
+        /* .music {
+
+            margin: 100px;
+            margin-left: 100px;
+            margin-left: 80px;
+            margin: auto;
+            padding: 10ch;
+        } */
+    </style>
+    <audio id="bg-music" autoplay>
+        <source src="your-music-file.mp3" type="audio/mpeg">
+        <!-- Your browser does not support the audio element. -->
+    </audio>
+    <script>
+        function playMusic() {
+            const audio = document.getElementById("myAudio");
+            audio.play();
+        }
+
+        window.addEventListener('load', () => {
+            const audio = document.getElementById('bg-music');
+            // Try to play explicitly in case browser requires it due to autoplay restrictions
+            audio.play().catch((error) => {
+                console.log("Autoplay failed:", error);
+            });
+        });
+    </script>
+</body>
+
+</html>

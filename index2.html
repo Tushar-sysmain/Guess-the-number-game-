@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <audio id="background-music" autoplay>
+        <source src="mario.mp3" type="audio/mpeg">
+      </audio>
+
+      <script>
+         window.addEventListener("load", function () {
+      const audio = document.getElementById("background-music");
+      const playPromise = audio.play();
+      
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            console.log("Audio is playing");
+          })
+          .catch(error => {
+            console.warn("Autoplay blocked. User interaction is needed.");
+          });
+      }
+    });
+      </script>
+      <style>
+        html,body{
+          background-color: #086375;
+          align-self: center;
+          justify-items: center;
+          align-self: center;
+          justify-self: center;
+        }
+         .neon-button {
+            font-size: 18px;
+            color: #AFFC41;
+            background: none;
+            border: 2px solid #0ff;
+            border-radius: 8px;
+            cursor: pointer;
+            align-self: center;
+            justify-self: center;
+            justify-items: center;
+            text-transform: uppercase;
+            transition: 0.3s;
+            box-shadow:
+                0 0 5px rgb(247, 113, 229),
+                0 0 10px rgb(247, 113, 229),
+                0 0 20px rgb(247, 113, 229),
+                0 0 40px rgb(247, 113, 229);
+        }
+
+        .neon-button:hover {
+            background-color: #B2FF9E;
+            color: rgb(136, 87, 129);
+            box-shadow:
+                0 0 30px #1DD3B0,
+                0 0 30px #1DD3B0,
+                0 0 30px #1DD3B0,
+                0 0 30px #1DD3B0;
+        }
+      </style>
+    
+
+
+
+
+    <a href="index6.html"><button class="neon-button" style="padding: 30px 101px;">Easy</button></a>
+    <br><br><br>
+    <a href="index4.html"><button class="neon-button" style="padding: 30px 85px;">Normall</button></a>
+    <br><br><br>
+    <a href="index3.html"><button class="neon-button" style="padding: 30px 104px;">Hard</button></a>
+    <br><br><br>
+    <a href="index5.html"><button class="neon-button" style="padding: 30px 55px;">Extreme Hard</button></a>
+    <br><br><br>
+
+    <a href="https://www.instagram.com/7087tushar/" style="color: #AFFC41;"><button style="align-self: center;justify-self: center;"class="neon-button">
+        <marquee style="align-items: center;justify-self: center; padding: 30px 29px" >@Developer Tushar</marquee>
+      </a>
+</body>
+</html>
